@@ -1,4 +1,26 @@
-h1 {
-  height: 100px;
-  background-color: green;
+.top {
+  height: 15vh;
+  background-color: lightgreen;
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  height: 90vh;
+  width: 80vw;
+  border: solid black 1px;
+  margin-top: 30px;
+  background-color: white;
+}
+
+.left {
+  width: 380px;
+  height: 100%;
+  border: solid black 1px;
+  float: left;
+}
+
+.right {
+  height: 100%;
+  border: solid black 1px;
 }
