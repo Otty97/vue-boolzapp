@@ -33,7 +33,7 @@
            <input type="text" name="" size="30px" value="" placeholder="serch contact">
          </div>
          <div class="chats">
-           <div class="contacts styleImg" v-for='(el ,index) in contacts'>
+           <div style="cursor:pointer" v-bind:class="{ active: isActive }" @click='selected(i)' class="contacts styleImg" v-for='(el ,i) in contacts'>
              <img :src="el.image" alt="foto">
              <h3>{{el.name}}</h3>
            </div>
@@ -42,10 +42,10 @@
        <div class="rightSide">
          <div class="contactMain bkgrLightgrey">
            <div class=" styleImg">
-             <img src="img/avatar_1.jpg" alt="foto">
+             <img src="contacts[index].src" alt="foto">
            </div>
            <div class="contactProfile">
-             <h3>Michele</h3>
+             <h3>{{contacts[index].name}}</h3>
              <h5>ultimo accesso alle </h5>
            </div>
            <div class="contactIcon colorIconUp">
@@ -54,7 +54,7 @@
              <i class="fas fa-ellipsis-v"></i>
            </div>
          </div>
-         <div class="chatHMessage">
+         <div class="chatMessage">
          </div>
          <div class="writing bkgrBeige colorIconDown">
            <i class="far fa-smile"></i>

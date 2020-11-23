@@ -55,9 +55,14 @@ const myApp = new Vue({
         image: 'img/avatar_6.jpg',
         lastChat:'03/10/20'
       }
-    ]
+    ],
+    index: 0,
+    isActive: false,
   },
-  //methods: {
-  //  contatto selezionato(){
-  //    mostra contatto = true (elemento deve essere nascosto con una classe false)
+  methods: {
+     selected: function(){
+       this.index = index;
+       this.isActive = true;
+     }
+  }
 })
