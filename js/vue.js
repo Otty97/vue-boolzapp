@@ -57,4 +57,7 @@ const myApp = new Vue({
       }
     ]
   },
+  //methods: {
+  //  contatto selezionato(){
+  //    mostra contatto = true (elemento deve essere nascosto con una classe false)
 })
