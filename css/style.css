@@ -1,26 +1,163 @@
-.top {
-  height: 15vh;
-  background-color: lightgreen;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  background: linear-gradient(to top, #d9dbd4 ,#d9dbd4 70% , #019788 20%);
+}
+
+.container{
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  height:90vh;
+  margin-top:30px;
+  margin-bottom:0px;
+  border: 1px solid #ebebeb;
   display: flex;
+  min-width: 800px;
+}
+
+.leftCard{
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  border: 1px solid #ebebeb;
+  height: 100%;
+  min-width: 30vw;
+}
+
+.rightCard{
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  height:100%;
+  border: 1px solid #ebebeb;
+  background-image: url('../img/mine.jpg');
+  position: relative;
+  min-width: 30vw;
+}
+
+.userName ,.notifiche ,.friendChoice , .friends{
+  display: flex;
+  height: 80px;
+  border:1px solid #ebebeb;
+  align-items:center;
+  width: 100%;
+}
+
+.iconUserName{
+  display:flex;
+  justify-content: flex-end;
+  width:60%;
+}
+.iconUserName > i{
+  margin:5px;
+}
+
+
+
+.notifiche > i{
+  margin-left: 15px;
+  font-size: 2rem;
+  background-color: #fff;
+  padding: 10px;
+  border-radius:50%;
+  color: #9fdaf9
+}
+.notifiche > .notificheBell{
+  margin-left:10px;
+}
+
+.styleImg > img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right:5px;
+  margin-left:5px;
+}
+.chats{
+  overflow:scroll;
+}
+.searchChat{
+  height:40px;
+  display: flex;
+  border:1px solid #ebebeb;
+  align-items:center;
   justify-content: center;
+  padding: 10px;
+}
+.searchChat > input {
+  width: 100%;
+  padding: 10px;
+  margin-right:5px;
+  height:30px;
+}
+.searchChat > i {
+  padding: 10px;
+  min-width: 40px;
+  background-color: #fff;
+  height:30px;
+  margin-left:5px;
+  align-items:center;
+  justify-content: center;
+  display: flex;
 }
 
-.main {
-  height: 90vh;
-  width: 80vw;
-  border: solid black 1px;
-  margin-top: 30px;
-  background-color: white;
+.iconFriend{
+  display:flex;
+  justify-content: flex-end;
+  width:75%;
+}
+.iconFriend > i{
+  margin:5px;
 }
 
-.left {
-  width: 380px;
-  height: 100%;
-  border: solid black 1px;
-  float: left;
+.writing{
+  height:80px;
+  width:100%;
+  border: 1px solid #ebebeb;
+  position: absolute;
+  bottom: 0;
+  display:flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+}
+.writing > input{
+  height:50px;
+  font-size:1rem;
+  width: 80%;
+}
+.writing > i {
+  font-size: 1.5rem;
+  margin: 15px;
 }
 
-.right {
-  height: 100%;
-  border: solid black 1px;
+/* COLORI */
+
+.bkgrLightgrey{
+  background-color: #ebebeb
 }
+
+.bkgrAzure{
+  background-color: #9fdaf9;
+}
+
+.bkgrWhite{
+  background-color: #fff;
+}
+
+.bkgrBeige{
+  background-color: #f3efec
+}
+
+.colorIconUp{
+  color: #b3b3b3;
+}
+.colorIconDown{
+  color:#636363;
+  }
