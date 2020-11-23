@@ -20,8 +20,8 @@
 const myApp = new Vue({
   el:'#myBoolzapp',
   data:{
-    nomeUtente:{
-      nome: 'Marco',
+      userName:{
+      nome: 'Nome Utente',
       image: 'img/avatar_io.jpg'
     },
     contacts:[
@@ -31,22 +31,22 @@ const myApp = new Vue({
         lastChat:'03/10/20'
       },
       {
-        name: 'rosa',
+        name: 'fabio',
         image: 'img/avatar_2.jpg',
         lastChat:'03/10/20'
       },
       {
-        name: 'giovanni',
+        name: 'samuele',
         image: 'img/avatar_3.jpg',
         lastChat:'03/10/20'
       },
       {
-        name: 'maria',
+        name: 'claudio',
         image: 'img/avatar_4.jpg',
         lastChat:'03/10/20'
       },
       {
-        name: 'pablo',
+        name: 'arnaldo',
         image: 'img/avatar_5.jpg',
         lastChat:'03/10/20'
       },

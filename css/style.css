@@ -6,7 +6,8 @@
 
 body{
   height: 100vh;
-  background: linear-gradient(to top, #d9dbd4 ,#d9dbd4 70% , #019788 20%);
+  background: linear-gradient(to top, #d9dbd4 ,#d9dbd4 80% , #019788 20%);
+  font-family: 'Raleway', sans-serif;
 }
 
 .container{
@@ -16,37 +17,41 @@ body{
   height:90vh;
   margin-top:30px;
   margin-bottom:0px;
-  border: 1px solid #ebebeb;
   display: flex;
   min-width: 800px;
 }
 
-.leftCard{
+.leftSide{
   display: flex;
   flex-direction: column;
   width: 40vw;
-  border: 1px solid #ebebeb;
   height: 100%;
   min-width: 30vw;
 }
 
-.rightCard{
+.rightSide{
   display: flex;
   flex-direction: column;
   width: 60vw;
   height:100%;
-  border: 1px solid #ebebeb;
   background-image: url('../img/mine.jpg');
   position: relative;
   min-width: 30vw;
 }
 
-.userName ,.notifiche ,.friendChoice , .friends{
+.userName ,.notifiche ,.contactMain, .contacts{
   display: flex;
   height: 80px;
-  border:1px solid #ebebeb;
   align-items:center;
   width: 100%;
+}
+
+.contacts {
+  border-bottom: 1px solid lightgrey;
+}
+
+.userName {
+  border-right: 1px solid lightgrey;
 }
 
 .iconUserName{
@@ -54,11 +59,16 @@ body{
   justify-content: flex-end;
   width:60%;
 }
+
 .iconUserName > i{
   margin:5px;
 }
 
-
+.contactProfile h5 {
+  font-weight: lighter;
+  color: grey;
+  width: 100%;
+}
 
 .notifiche > i{
   margin-left: 15px;
@@ -68,8 +78,13 @@ body{
   border-radius:50%;
   color: #9fdaf9
 }
+
 .notifiche > .notificheBell{
   margin-left:10px;
+}
+
+.notificheBell a {
+  color: grey;
 }
 
 .styleImg > img {
@@ -79,9 +94,11 @@ body{
   margin-right:5px;
   margin-left:5px;
 }
+
 .chats{
-  overflow:scroll;
+  overflow-y: scroll;
 }
+
 .searchChat{
   height:40px;
   display: flex;
@@ -90,29 +107,39 @@ body{
   justify-content: center;
   padding: 10px;
 }
+
 .searchChat > input {
   width: 100%;
   padding: 10px;
   margin-right:5px;
   height:30px;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 15px;
 }
+
 .searchChat > i {
   padding: 10px;
   min-width: 40px;
   background-color: #fff;
   height:30px;
   margin-left:5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   align-items:center;
   justify-content: center;
   display: flex;
 }
 
-.iconFriend{
+.contactIcon{
   display:flex;
   justify-content: flex-end;
-  width:75%;
+  align-items: flex-start;
+  width: 70%;
 }
-.iconFriend > i{
+
+.contactIcon > i{
   margin:5px;
 }
 
@@ -127,23 +154,28 @@ body{
   justify-content:center;
   align-items: center;
 }
+
 .writing > input{
   height:50px;
   font-size:1rem;
   width: 80%;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
 }
+
 .writing > i {
   font-size: 1.5rem;
   margin: 15px;
 }
 
-/* COLORI */
+/* backgrounds */
 
 .bkgrLightgrey{
   background-color: #ebebeb
 }
 
-.bkgrAzure{
+.bkgrBlue{
   background-color: #9fdaf9;
 }
 
@@ -158,6 +190,7 @@ body{
 .colorIconUp{
   color: #b3b3b3;
 }
+
 .colorIconDown{
   color:#636363;
-  }
+}

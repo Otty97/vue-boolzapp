@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -10,17 +11,17 @@
   </head>
   <body>
     <div class="container" id="myBoolzapp">
-  <div class="leftCard bkgrWhite">
+  <div class="leftSide bkgrWhite">
     <div class="userName styleImg bkgrLightgrey">
-      <img :src="nomeUtente.image" alt="foto">
-      <h4>{{nomeUtente.nome}}</h4>
+      <img :src="userName.image" alt="foto">
+      <h4>{{userName.nome}}</h4>
       <div class="iconUserName colorIconUp">
         <i class="fas fa-circle-notch"></i>
         <i class="fas fa-comment-alt"></i>
         <i class="fas fa-ellipsis-v"></i>
       </div>
     </div>
-    <div class="notifiche bkgrAzure">
+    <div class="notifiche bkgrBlue">
       <i class="fas fa-bell-slash"></i>
       <div class="notificheBell">
         <h4>Ricevi notifiche di nuovi messaggi</h4>
@@ -29,25 +30,25 @@
     </div>
     <div class="searchChat bkgrLightgrey colorIconUp">
       <i class="fas fa-search"></i>
-      <input type="text" name="" size="30px" value="" placeholder="cerca chat">
+      <input type="text" name="" size="30px" value="" placeholder="serch contact">
     </div>
     <div class="chats">
-      <div class="friends styleImg" v-for='(el ,index) in contacts'>
+      <div class="contacts styleImg" v-for='(el ,index) in contacts'>
         <img :src="el.image" alt="foto">
         <h3>{{el.name}}</h3>
       </div>
     </div>
   </div>
-  <div class="rightCard">
-    <div class="friendChoice bkgrLightgrey">
+  <div class="rightSide">
+    <div class="contactMain bkgrLightgrey">
       <div class=" styleImg">
         <img src="img/avatar_1.jpg" alt="foto">
       </div>
-      <div class="">
+      <div class="contactProfile">
         <h3>Michele</h3>
-        <h5>ultimo acesso</h5>
+        <h5>ultimo accesso alle </h5>
       </div>
-      <div class="iconFriend colorIconUp">
+      <div class="contactIcon colorIconUp">
         <i class="fas fa-search"></i>
         <i class="fas fa-paperclip"></i>
         <i class="fas fa-ellipsis-v"></i>
@@ -57,7 +58,7 @@
     </div>
     <div class="writing bkgrBeige colorIconDown">
       <i class="far fa-smile"></i>
-      <input type="text" placeholder="scrivi messaggio..." name="" value="">
+      <input type="text" placeholder="type a message..." name="" value="">
       <i class="fas fa-microphone"></i>
     </div>
   </div>
