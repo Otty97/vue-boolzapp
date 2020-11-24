@@ -64,6 +64,7 @@ const myApp = new Vue({
     ],
     currentIndex:0,
     myInput:'',
+    search:"",
 
   },
   methods:{
@@ -72,7 +73,14 @@ const myApp = new Vue({
     },
     message: function(){
       this.contacts[this.currentIndex]['message'].push(this.myInput)
-    }
+    },
   },
+  computed:{
+    filteredContacts() {
+      return this.contacts.filter(contact => {
+        return contact.name.toLocaleLowerCase().includes(this.search.toLowerCase());
+      })
+    },
+  }
 
-})
+});

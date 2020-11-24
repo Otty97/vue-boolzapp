@@ -30,10 +30,10 @@
          </div>
          <div class="searchChat bkgrLightgrey colorIconUp">
            <i class="fas fa-search"></i>
-           <input type="text" name="" size="30px" value="" placeholder="serch contact">
+           <input v-model="search" type="text" name="" size="30px" value="" placeholder="serch contact">
          </div>
          <div class="chats">
-           <div style="cursor:pointer;" @click='selected(i)'  v-for='(el ,i) in contacts'>
+           <div style="cursor:pointer;" @click='selected(i)'  v-for='(el ,i) in filteredContacts'>
              <div class="contacts styleImg">
               <img :src="el.image" alt="profile pic">
               <h3>{{el.name}}</h3>
@@ -44,7 +44,7 @@
        <div class="rightSide">
          <div class="contactMain bkgrLightgrey">
            <div class=" styleImg">
-             <img src="contacts[currentIndex]['image']" alt="profile pic">
+             <img v-bind:src="contacts[currentIndex]['image']" alt="profile pic">
            </div>
            <div class="contactProfile">
              <h3>{{contacts[currentIndex]['name']}}</h3>
