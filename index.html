@@ -33,19 +33,21 @@
            <input type="text" name="" size="30px" value="" placeholder="serch contact">
          </div>
          <div class="chats">
-           <div style="cursor:pointer" v-bind:class="{ active: isActive }" @click='selected(i)' class="contacts styleImg" v-for='(el ,i) in contacts'>
-             <img :src="el.image" alt="foto">
-             <h3>{{el.name}}</h3>
+           <div style="cursor:pointer;" @click='selected(i)'  v-for='(el ,i) in contacts'>
+             <div class="contacts styleImg">
+              <img :src="el.image" alt="profile pic">
+              <h3>{{el.name}}</h3>
+             </div>
            </div>
          </div>
        </div>
        <div class="rightSide">
          <div class="contactMain bkgrLightgrey">
            <div class=" styleImg">
-             <img src="contacts[index].src" alt="foto">
+             <img src="contacts[currentIndex]['image']" alt="profile pic">
            </div>
            <div class="contactProfile">
-             <h3>{{contacts[index].name}}</h3>
+             <h3>{{contacts[currentIndex]['name']}}</h3>
              <h5>ultimo accesso alle </h5>
            </div>
            <div class="contactIcon colorIconUp">
@@ -55,10 +57,13 @@
            </div>
          </div>
          <div class="chatMessage">
+           <div class="" v-for='(key ,i) in contacts[currentIndex]'>
+           {{[currentIndex][message]}}
+         </div>
          </div>
          <div class="writing bkgrBeige colorIconDown">
            <i class="far fa-smile"></i>
-           <input type="text" placeholder="type a message..." name="" value="">
+           <input type="text" placeholder="type a message..." name="" value="" v-model='myInput'>
            <i class="fas fa-microphone"></i>
          </div>
        </div>

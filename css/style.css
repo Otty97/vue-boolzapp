@@ -41,13 +41,19 @@ body{
 
 .userName ,.notifiche ,.contactMain, .contacts{
   display: flex;
-  height: 80px;
+  min-height: 80px;
   align-items:center;
   width: 100%;
 }
 
+
+
 .contacts {
   border-bottom: 1px solid lightgrey;
+}
+
+.contacts:hover {
+  background-color: lightgrey;
 }
 
 .userName {

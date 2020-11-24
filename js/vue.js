@@ -28,41 +28,51 @@ const myApp = new Vue({
       {
         name: 'michele',
         image: 'img/avatar_1.jpg',
-        lastChat:'03/10/20'
+        lastChat:'03/10/20',
+        message:[],
       },
       {
         name: 'fabio',
         image: 'img/avatar_2.jpg',
-        lastChat:'03/10/20'
+        lastChat:'03/10/20',
+        message:[],
       },
       {
         name: 'samuele',
         image: 'img/avatar_3.jpg',
-        lastChat:'03/10/20'
+        lastChat:'03/10/20',
+        message:[],
       },
       {
         name: 'claudio',
         image: 'img/avatar_4.jpg',
-        lastChat:'03/10/20'
+        lastChat:'03/10/20',
+        message:[],
       },
       {
         name: 'arnaldo',
         image: 'img/avatar_5.jpg',
-        lastChat:'03/10/20'
+        lastChat:'03/10/20',
+        message:[],
       },
       {
         name: 'luisa',
         image: 'img/avatar_6.jpg',
-        lastChat:'03/10/20'
+        lastChat:'03/10/20',
+        message:[],
       }
     ],
-    index: 0,
-    isActive: false,
+    currentIndex:0,
+    myInput:'',
+
   },
-  methods: {
-     selected: function(){
-       this.index = index;
-       this.isActive = true;
-     }
-  }
+  methods:{
+    selected: function(index){
+       this.currentIndex = index
+    },
+    message: function(){
+      this.contacts[this.currentIndex]['message'].push(this.myInput)
+    }
+  },
+
 })
