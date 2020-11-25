@@ -29,58 +29,124 @@ const myApp = new Vue({
         name: 'michele',
         image: 'img/avatar_1.jpg',
         lastChat:'03/10/20',
-        message:[],
+        convertation:[
+          {
+            text:'compri il latte?',
+            date:'20 ott 2020',
+            type: 'received'
+          },
+          {
+            text:'non posso sto a lavoro',
+            date: '21 ott 2020',
+            type:'sent'
+          }
+            ]
       },
       {
         name: 'fabio',
         image: 'img/avatar_2.jpg',
         lastChat:'03/10/20',
-        message:[],
+        convertation:[
+          {
+            text:'Allora Calcetto questa sera?',
+            date:'20 ott 2020',
+            type: 'received'
+          },
+          {
+            text:'ok ricordati di portare le casacche',
+            date: '21 ott 2020',
+            type:'sent'
+          }
+            ]
       },
       {
         name: 'samuele',
         image: 'img/avatar_3.jpg',
         lastChat:'03/10/20',
-        message:[],
+        convertation:[
+          {
+            text:'hai sentito Fabio?',
+            date:'20 ott 2020',
+            type: 'received'
+          },
+          {
+            text:'gli scrivo adesso',
+            date: '21 ott 2020',
+            type:'sent'
+          }
+            ]
       },
       {
         name: 'claudio',
         image: 'img/avatar_4.jpg',
         lastChat:'03/10/20',
-        message:[],
+        convertation:[
+          {
+            text:'ti ho linkato il progetto',
+            date:'20 ott 2020',
+            type: 'received'
+          },
+          {
+            text:'lo guado qusta sera',
+            date: '21 ott 2020',
+            type:'sent'
+          }
+            ]
       },
       {
         name: 'arnaldo',
         image: 'img/avatar_5.jpg',
         lastChat:'03/10/20',
-        message:[],
+        convertation:[
+          {
+            text:'Ho aggiornato il portafoglio azionario. Ti aspetto domani in filiale.',
+            date:'20 ott 2020',
+            type: 'received'
+          },
+          {
+            text:'perfetto conferma il transfer cosi domani procediamo',
+            date: '21 ott 2020',
+            type:'sent'
+          }
+            ]
       },
       {
         name: 'luisa',
         image: 'img/avatar_6.jpg',
         lastChat:'03/10/20',
-        message:[],
+        convertation:[
+          {
+            text:'amo questa sera shushi?',
+            date:'20 ott 2020',
+            type: 'received'
+          },
+          {
+            text:'ok dopo le 21 perche abbiamo calcetto',
+            date: '21 ott 2020',
+            type:'sent'
+          }
+            ]
       }
     ],
     currentIndex:0,
-    myInput:'',
+    myInput:"",
     search:"",
-
   },
+
   methods:{
-    selected: function(index){
+    selected: function(index){//funzione che seleziona la mex page in base al contatto selezionato
        this.currentIndex = index
     },
-    message: function(){
-      this.contacts[this.currentIndex]['message'].push(this.myInput)
+    sendMessage: function(){//funzione che iniva un mex
+      this.contacts[this.currentIndex][this.convertation][1].push({text: this.myInput})
     },
   },
+
   computed:{
-    filteredContacts() {
+    filteredContacts() {//funzione che filtra i contatti
       return this.contacts.filter(contact => {
         return contact.name.toLocaleLowerCase().includes(this.search.toLowerCase());
       })
     },
-  }
-
-});
+   }
+})

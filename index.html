@@ -30,7 +30,7 @@
          </div>
          <div class="searchChat bkgrLightgrey colorIconUp">
            <i class="fas fa-search"></i>
-           <input v-model="search" type="text" name="" size="30px" value="" placeholder="serch contact">
+           <input v-model="search" type="text" name="" size="30px" value="" placeholder="search contact">
          </div>
          <div class="chats">
            <div style="cursor:pointer;" @click='selected(i)'  v-for='(el ,i) in filteredContacts'>
@@ -48,7 +48,7 @@
            </div>
            <div class="contactProfile">
              <h3>{{contacts[currentIndex]['name']}}</h3>
-             <h5>ultimo accesso alle </h5>
+             <h5>ultimo accesso alle {{contacts[currentIndex]['lastChat']}}</h5>
            </div>
            <div class="contactIcon colorIconUp">
              <i class="fas fa-search"></i>
@@ -56,14 +56,19 @@
              <i class="fas fa-ellipsis-v"></i>
            </div>
          </div>
-         <div class="chatMessage">
-           <div class="" v-for='(key ,i) in contacts[currentIndex]'>
-           {{[currentIndex][message]}}
-         </div>
+         <div class="chatBox">
+            <div class="messages " v-for='contatto in contacts[currentIndex].convertation' :class="{'f-end': contatto.type === 'sent'}">
+              <div class="message" :class="contatto.type === 'sent'? 'bkgrWhite' : 'bkgrLightGreen' ">
+                <span> {{contatto.text}} </span>
+                <div class="hourMessage ">
+                  <span> {{contatto.date}}</span>
+                </div>
+             </div>
+           </div>
          </div>
          <div class="writing bkgrBeige colorIconDown">
            <i class="far fa-smile"></i>
-           <input type="text" placeholder="type a message..." name="" value="" v-model='myInput'>
+           <input type="text" placeholder="type a message..." name="" value="" v-model='myInput' v-on:keyup.enter="sendMessage">
            <i class="fas fa-microphone"></i>
          </div>
        </div>
