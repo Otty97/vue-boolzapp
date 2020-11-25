@@ -21,11 +21,18 @@
              <i class="fas fa-ellipsis-v"></i>
            </div>
          </div>
-         <div class="notifiche bkgrBlue">
+         <div class="notifiche bkgrBlue" v-if='notificheActive'>
            <i class="fas fa-bell-slash"></i>
            <div class="notificheBell">
-             <h4>Ricevi notifiche di nuovi messaggi</h4>
-             <a href="#">Attiva notifiche desktop</a>
+             <h4>{{notificheStatus[0].title}}</h4>
+             <a href="#" @click='notificheOn'>{{notificheStatus[0].status}}</a>
+           </div>
+         </div>
+         <div class="notifiche bkgrBlue" v-else>
+           <i class="fas fa-bell"></i>
+           <div class="notificheBell">
+             <h4>{{notificheStatus[1].title}}</h4>
+             <a href="#" @click='notificheOff'>{{notificheStatus[1].status}}</a>
            </div>
          </div>
          <div class="searchChat bkgrLightgrey colorIconUp">
@@ -44,11 +51,11 @@
        <div class="rightSide">
          <div class="contactMain bkgrLightgrey">
            <div class=" styleImg">
-             <img v-bind:src="contacts[currentIndex]['image']" alt="profile pic">
+             <img v-bind:src="filteredContacts[currentIndex]['image']" alt="profile pic">
            </div>
            <div class="contactProfile">
-             <h3>{{contacts[currentIndex]['name']}}</h3>
-             <h5>ultimo accesso alle {{contacts[currentIndex]['lastChat']}}</h5>
+             <h3>{{filteredContacts[currentIndex]['name']}}</h3>
+             <h5>ultimo accesso alle {{filteredContacts[currentIndex]['lastChat']}}</h5>
            </div>
            <div class="contactIcon colorIconUp">
              <i class="fas fa-search"></i>
@@ -57,7 +64,7 @@
            </div>
          </div>
          <div class="chatBox">
-            <div class="messages " v-for='contatto in contacts[currentIndex].convertation' :class="{'f-end': contatto.type === 'sent'}">
+            <div class="messages" v-for='contatto in filteredContacts[currentIndex].convertation' :class="{'f-end': contatto.type === 'sent'}">
               <div class="message" :class="contatto.type === 'sent'? 'bkgrWhite' : 'bkgrLightGreen' ">
                 <span> {{contatto.text}} </span>
                 <div class="hourMessage ">

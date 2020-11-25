@@ -16,13 +16,12 @@
 	//nome: tipo stringa / generica,
 	//ultimoAccesso: tipo stringa / rappresentazione di una data
  //}
-
 const myApp = new Vue({
   el:'#myBoolzapp',
   data:{
-      userName:{
-      nome: 'Nome Utente',
-      image: 'img/avatar_io.jpg'
+    userName:{
+     nome: 'Nome Utente',
+     image: 'img/avatar_io.jpg'
     },
     contacts:[
       {
@@ -128,6 +127,19 @@ const myApp = new Vue({
             ]
       }
     ],
+    notificheStatus:[
+      {
+        icon: "fas fa-bell-slash",
+        title:'Ricevi notifiche di nuovi messaggi',
+        status: 'Attiva notifiche desktop',
+      },
+      {
+        icon: "fas fa-bell",
+        title:'Silenzia notifiche dei nuovi messaggi',
+        status: 'disattiva notifiche desktop',
+      },
+    ],
+    notificheActive:true,
     currentIndex:0,
     myInput:"",
     search:"",
@@ -152,8 +164,14 @@ const myApp = new Vue({
             type: 'sent',
             date: '21 ott 2020'
             });
-      return this.myInput;
       setTimeout(()=> {this.receivedMessage()} ,3000);
+    },
+    notificheOn: function(){
+      this.notificheActive = false;
+      alert('Le notifiche sono state attivate')
+    },
+    notificheOff: function(){
+      this.notificheActive = true;
     }
   },
 
