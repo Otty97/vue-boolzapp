@@ -103,6 +103,11 @@ body{
   margin:5px;
 }
 
+.iconUserName i:hover{
+  cursor: pointer;
+  color: #5c5c5c;
+}
+
 .contactProfile h5 {
   font-weight: lighter;
   color: grey;
@@ -176,6 +181,12 @@ body{
   justify-content: flex-end;
   align-items: flex-start;
   width: 70%;
+  padding: 20px;
+}
+
+.contactIcon i:hover{
+  cursor: pointer;
+  color: #5c5c5c;
 }
 
 .contactIcon > i{
@@ -206,7 +217,17 @@ body{
 .writing > i {
   font-size: 1.5rem;
   margin: 15px;
+  cursor: pointer;
 }
+
+.writing i:hover{
+  color: #e8c312;
+}
+
+.writing i:last-child:hover{
+  color: red;
+}
+
 
 /* backgrounds */
 

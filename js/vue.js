@@ -137,9 +137,24 @@ const myApp = new Vue({
     selected: function(index){//funzione che seleziona la mex page in base al contatto selezionato
        this.currentIndex = index
     },
-    sendMessage: function(){//funzione che iniva un mex
-      this.contacts[this.currentIndex][this.convertation][1].push({text: this.myInput})
+    receivedMessage: function(){//funzione che setta una risposta automatica
+      this.contacts[this.currentIndex].convertation.push(
+      {
+        text: 'ok perfetto',
+        type: 'received',
+        date: '21 ott 2020'
+      })
     },
+    sendMessage: function(){//funzione per inviare l'input
+          this.contacts[this.currentIndex].convertation.push(
+            {
+            text: this.myInput,
+            type: 'sent',
+            date: '21 ott 2020'
+            });
+      return this.myInput;
+      setTimeout(()=> {this.receivedMessage()} ,3000);
+    }
   },
 
   computed:{
